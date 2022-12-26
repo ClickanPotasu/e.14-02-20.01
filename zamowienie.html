@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabryka żelków</title>
+    <link rel="stylesheet" href="styl9.css">
+</head>
+<body>
+    <section class="top1">
+        <a href="index.html"><img src="cukierki2.png" alt="logo fabryki"></a>
+    </section>
+    <section class="top2">
+        <a href="zamowienie.html" class="a">Zamówienie</a>
+    </section>
+
+    <section class="baner">
+        <h2>Zamów nasz produkt</h2>
+    </section>
+
+    <section class="lewy">
+        <h1>Oferta</h1>
+        <table>
+            <th>Krztałt</th><th>Kolory</th>
+            <tr>
+                <td><ol>
+                    <li> miś </li>
+                    <li> żabka  </li>
+                    <li> serce </li>
+                </ol></td>
+                <td><ol>
+                    <li> czerwony </li>
+                    <li> niebieski  </li>
+                    <li> żółty </li>
+                    <li> inny </li>
+                </ol></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="prawy">
+        Podaj numer kształtu:
+        <input type='number' id="shape"><br>
+        skomponuj swój kolor, podaj RGB:<br>
+        R:<input type="number" id="R"><br>
+        G:<input type="number" id="G"><br>
+        B:<input type="number" id="B"><br>
+        <input type="button" value="Zamów" onclick="order()">
+        <p id="value">Wybrany krztałt</p>
+        <input type="button" value="Wybrany kolor" id="button">
+    </section>
+
+    <section class="stopka">
+        Autor strony: <i>Alan Maroński</i>
+    </section>
+
+    <script>
+        function order(){
+            // Kod Spagetti ale ważne, że działa :D//
+
+            //WARTOŚCI :DDD NA PÓŁ SKRYPTU TAK JEST :D//
+
+            var shape = document.getElementById('shape').value; //Krztałt żełka//
+            var value = document.getElementById('value'); //Nie potrzebne ale łatwiej się odnosi do tego//
+            var tekst = ""; //Inaczej błąd wywala ;-;///
+            var R = document.getElementById('R').value; //Wartość R w rgb//
+            var G = document.getElementById('G').value;; //Wartość G w rgb//
+            var B = document.getElementById('B').value;; //Wartość B w rgb//
+            var button = document.getElementById('button');
+
+            //SAM SKRYPT TAK JEST :DDD//
+
+            if(shape == 1){tekst = "Zamówiłeś krztałt: miś";}
+            else if(shape == 2){tekst = "Zamówiłeś krztałt: żabka";}
+            else if(shape == 3){tekst = "Zamówiłeś krztałt: serce";}
+            else{tekst = "Zamówiłeś krztałt: inny krztałt";}
+
+            //Wyniki :DDD//
+            value.innerHTML=tekst;
+            button.style.backgroundColor="rgb("+R+","+G+","+B+")";
+        } 
+    </script>
+</body>
+</html>
